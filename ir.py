@@ -3,17 +3,23 @@ import pandas as pd
 import streamlit as st
 import pickle
 import numpy as np
-import joblib
+
 
 
 
 with open('svm_binary.pkl','rb')as file:
     svm_binary=pickle.load(file)
 
-svm_multi= joblib.load('svm_multi.pkl')
-logistics_binary = joblib.load('logistics_binary.pkl')
-logistics_ovr = joblib.load('logistic_multi_ovr_model.pkl')
-logistics_multinomial = joblib.load('logistic_multi_softmax_model.pkl')
+with open('svm_multi.pkl','rb')as file:
+    svm_multi=pickle.load(file)
+with open('logistics_binary.pkl','rb')as file:
+    logistics_binary=pickle.load(file)
+with open('logistic_multi_ovr_model.pkl','rb')as file:
+    logistics_ovr=pickle.load(file)
+with open('logistic_multi_softmax_model.pkl','rb')as file:
+    logistics_multinomial=pickle.load(file)
+
+
      
 st.title("Model Selection and Prediction App")
 
